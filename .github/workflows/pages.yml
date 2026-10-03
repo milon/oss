@@ -129,15 +129,15 @@ jobs:
 
           printf '%s\n' 'oss.milon.im' > publish/CNAME
           touch publish/.nojekyll
-          cat > publish/robots.txt <<'EOF'
-User-agent: *
-Allow: /
-
-Sitemap: https://oss.milon.im/barcode/sitemap.xml
-Sitemap: https://oss.milon.im/papyrus/sitemap.xml
-Sitemap: https://oss.milon.im/bohurupee/sitemap.xml
-Sitemap: https://oss.milon.im/fuse/sitemap.xml
-EOF
+          {
+            echo 'User-agent: *'
+            echo 'Allow: /'
+            echo
+            echo 'Sitemap: https://oss.milon.im/barcode/sitemap.xml'
+            echo 'Sitemap: https://oss.milon.im/papyrus/sitemap.xml'
+            echo 'Sitemap: https://oss.milon.im/bohurupee/sitemap.xml'
+            echo 'Sitemap: https://oss.milon.im/fuse/sitemap.xml'
+          } > publish/robots.txt
           find publish -maxdepth 2 -type f | sort | head -40
 
       - uses: actions/upload-pages-artifact@v3
