@@ -1,0 +1,10 @@
+name = "oss-milon-im"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+# After first deploy, attach the custom domain in Cloudflare:
+#   Workers & Pages → oss-milon-im → Settings → Domains → oss.milon.im
+# Or: routes = [{ pattern = "oss.milon.im/*", zone_name = "milon.im" }]
+
+[vars]
+# No secrets required — public proxy to milon.github.io
