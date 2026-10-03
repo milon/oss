@@ -2,8 +2,10 @@
   "name": "oss-milon-im",
   "private": true,
   "scripts": {
+    "login": "wrangler login",
+    "whoami": "wrangler whoami",
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "bash scripts/deploy.sh"
   },
   "devDependencies": {
     "wrangler": "^4.34.0"
